@@ -14,9 +14,45 @@
     "popper.js": "^1.14.4"
   },
   "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-register": "^6.26.0",
     "browser-sync": "^2.24.7",
-    "gulp": "^3.9.1",
+    "gulp": "github:gulpjs/gulp#4.0",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-clean-css": "^3.10.0",
+    "gulp-cli": "^2.0.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-extname": "^0.2.2",
+    "gulp-if": "^2.0.2",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-sass": "^4.0.1",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-uglify": "^3.0.1",
+    "gulp-uncss": "^1.0.6",
     "js-yaml": "^3.12.0",
-    "panini": "^1.6.2"
+    "panini": "^1.6.2",
+    "rimraf": "^2.6.2",
+    "vinyl-named": "^1.1.0",
+    "webpack": "^4.19.1",
+    "webpack-stream": "^5.1.1",
+    "yargs": "^12.0.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/koriley/bootstrapCli"
+  },
+  "bugs": {
+    "url": "https://github.com/koriley/bootstrapCli/issues",
+    "email": "koriley21@gmail.com"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
   }
 }
