@@ -1,3 +1,12 @@
 @import "../../../node_modules/bootstrap/scss/bootstrap";
 @import 'customVariables';
 
+body {
+    padding-top: 54px;
+}
+
+@media (min-width: 992px) {
+    body {
+        padding-top: 56px;
+    }
+}

@@ -37,11 +37,13 @@ function newProject() {
 }
 
 function watch() {
-
+    
     //need to change from gulp watch, something more clever.
-    runGulp('watch','gulpfile.js').then(()=>{
+    runGulp('build','./gulpfile.js').then((data)=>{
+        console.log(data)
         console.log("watching it all happen")
     }).catch((e)=>{
+        console.log("ugh");
         console.log("Error: "+e);
     })
 }
