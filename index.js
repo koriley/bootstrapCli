@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 
 const fs = require('fs'); //file system
-const runGulp = require('run-gulp-task');
+const exec = require("child_process").exec
+const gulp = require("gulp");
 const yargs = require('yargs'); //cli commands and options
 const prompt = require('node-ask').prompt; //user input
 
@@ -37,13 +38,12 @@ function newProject() {
 }
 
 function watch() {
-    
-    //need to change from gulp watch, something more clever.
-    runGulp('build','./gulpfile.js').then((data)=>{
-        console.log(data)
-        console.log("watching it all happen")
-    }).catch((e)=>{
-        console.log("ugh");
-        console.log("Error: "+e);
-    })
+    // exec("gulp default", {shell:true}, (error, stdout, stderr) => {
+    //     console.log("stdout: "+stdout);
+    //     console.log(`stderr: ${stderr}`);
+    //     if (error !== null) {
+    //         console.log(`exec error: ${error}`);
+    //     }
+    // })
+    gulp.start('default');
 }

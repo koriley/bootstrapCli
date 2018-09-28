@@ -28,4 +28,9 @@ PATHS:
     
   # Paths to JavaScript entry points for webpack to bundle modules
   entries:
+   # - "node_modules/babel-polyfill/dist/polyfill.js"
+    - "node_modules/jquery/dist/jquery.js"
+    - "node_modules/popper.js/dist/popper.js"
+    - "node_modules/bootstrap/dist/js/bootstrap.js"
     - "src/assets/js/app.js"
+    
