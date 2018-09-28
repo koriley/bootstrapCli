@@ -2,9 +2,11 @@
 
 const fs = require('fs'); //file system
 const exec = require("child_process").exec
+const runGulpTask = require("run-gulp-task")
 const gulp = require("gulp");
 const yargs = require('yargs'); //cli commands and options
 const prompt = require('node-ask').prompt; //user input
+
 
 const argv = yargs
     .options({
@@ -31,6 +33,10 @@ function newProject() {
         console.log("building project");
         if (!fs.existsSync(answer)) {
             fs.mkdirSync(answer);
+            fs.createReadStream(__dirname+'/bootstrap-raw/bootstrap.zip').pipe(unzipper.Extract({ path: answer+'/bootstrap.zip' }));
+                
+                
+                // fs.createWriteStream(answer+'/bootstrap.zip'));
         } else {
             console.log("Directory already exists");
         }
@@ -38,12 +44,10 @@ function newProject() {
 }
 
 function watch() {
-    // exec("gulp default", {shell:true}, (error, stdout, stderr) => {
-    //     console.log("stdout: "+stdout);
-    //     console.log(`stderr: ${stderr}`);
-    //     if (error !== null) {
-    //         console.log(`exec error: ${error}`);
-    //     }
-    // })
-    gulp.start('default');
+    runGulpTask('default', 'gulpfile.js').then(()=> {
+        console.log("A thing was did");
+    }).catch(e => {
+        console.log("ugh");
+        console.log("Error :"+e)
+    })
 }
